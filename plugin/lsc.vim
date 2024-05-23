@@ -44,6 +44,8 @@ command! LSClientDisable call lsc#server#disable()
 command! LSClientEnable call lsc#server#enable()
 command! LSClientDisableDiagnosticHighlights call <SID>DisableHighlights()
 command! LSClientEnableDiagnosticHighlights call <SID>EnableHighlights()
+command! LSClientFormat call lsc#format#formatFile()
+command! -range LSClientFormat '<,'> call lsc#format#formatRange()
 
 if !exists('g:lsc_enable_apply_edit') || g:lsc_enable_apply_edit
   command! -nargs=? LSClientRename call lsc#edit#rename(<args>)
